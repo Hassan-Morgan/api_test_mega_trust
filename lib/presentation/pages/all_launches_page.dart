@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mega_trust_api_task/logic/cubit/app_cubit.dart';
 import 'package:mega_trust_api_task/logic/cubit/app_states.dart';
-import 'package:mega_trust_api_task/presentation/one_launch_page.dart';
 import 'package:mega_trust_api_task/presentation/resources/color_manager.dart';
 import 'package:mega_trust_api_task/presentation/resources/strings_manager.dart';
 import 'package:mega_trust_api_task/presentation/shared_custom_widgets/launch_sucess_item.dart';
 
-import '../data/models/launch_model.dart';
+import '../../data/models/launch_model.dart';
+import 'one_launch_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -77,11 +77,17 @@ class HomePage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(launch.missionName,style: Theme.of(context).textTheme.headline1,),
+                Text(
+                  launch.missionName,
+                  style: Theme.of(context).textTheme.headline1,
+                ),
                 const SizedBox(
                   height: 5,
                 ),
-                Text(launch.launchDate, style: Theme.of(context).textTheme.subtitle1,),
+                Text(
+                  launch.launchDate,
+                  style: Theme.of(context).textTheme.subtitle1,
+                ),
               ],
             ),
             const Spacer(),
