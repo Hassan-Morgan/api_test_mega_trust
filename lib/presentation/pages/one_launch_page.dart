@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mega_trust_api_task/data/models/launch_model.dart';
-import 'package:mega_trust_api_task/data/models/launch_site_model.dart';
 import 'package:mega_trust_api_task/data/models/rocket_model.dart';
 import 'package:mega_trust_api_task/presentation/resources/strings_manager.dart';
 import 'package:mega_trust_api_task/presentation/shared_custom_widgets/launch_sucess_item.dart';
