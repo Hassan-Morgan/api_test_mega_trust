@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mega_trust_api_task/data/models/launch_model.dart';
-import 'package:mega_trust_api_task/data/models/rocket_model.dart';
+import 'package:mega_trust_api_task/data/models/launch_model/launch_model.dart';
+import 'package:mega_trust_api_task/data/models/rocket_model/rocket_model.dart';
+import 'package:mega_trust_api_task/logic/get_it/launch_model_get.dart';
 import 'package:mega_trust_api_task/presentation/resources/strings_manager.dart';
 import 'package:mega_trust_api_task/presentation/shared_custom_widgets/launch_sucess_item.dart';
 
 class OneLaunchPage extends StatelessWidget {
-  final LaunchModel launch;
 
-  const OneLaunchPage({Key? key, required this.launch}) : super(key: key);
+  const OneLaunchPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    LaunchModel launch = locator.get();
     return Scaffold(
       appBar: AppBar(
-        title: Text(launch.missionName),
+        title: Text(launch.mission_name!),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -21,27 +22,27 @@ class OneLaunchPage extends StatelessWidget {
           children: [
             _itemBuilder(
               name: StringsManager.missionName,
-              itemValue: Text(launch.missionName),
+              itemValue: Text(launch.mission_name!),
             ),
             _itemBuilder(
               name: StringsManager.launchDate,
-              itemValue: Text(launch.launchDate),
+              itemValue: Text(launch.launch_date_utc!),
             ),
             _itemBuilder(
               name: StringsManager.missionNumber,
-              itemValue: Text('${launch.flightNumber}'),
+              itemValue: Text('${launch.flight_number}'),
             ),
             _itemBuilder(
               name: StringsManager.launchSuccess,
-              itemValue: LaunchSuccess(launchSuccess: launch.launchSuccess),
+              itemValue: LaunchSuccess(launchSuccess: launch.launch_success),
             ),
-            _rocket(launch.rocketModel),
+            _rocket(launch.rocket!),
             const SizedBox(
               height: 20,
             ),
             _itemBuilder(
               name: StringsManager.launchSiteId,
-              itemValue: Text(launch.launchSite.siteName),
+              itemValue: Text(launch.launch_site!.site_name!),
             ),
           ],
         ),
@@ -63,15 +64,15 @@ class OneLaunchPage extends StatelessWidget {
             children: [
               _itemBuilder(
                 name: StringsManager.rocketId,
-                itemValue: Text(rocket.rocketId),
+                itemValue: Text(rocket.rocket_id!),
               ),
               _itemBuilder(
-                name: StringsManager.rocketId,
-                itemValue: Text(rocket.rocketName),
+                name: StringsManager.rocketName,
+                itemValue: Text(rocket.rocket_name!),
               ),
               _itemBuilder(
-                name: StringsManager.rocketId,
-                itemValue: Text(rocket.rocketType),
+                name: StringsManager.rocketType,
+                itemValue: Text(rocket.rocket_type!),
               ),
             ],
           ),
