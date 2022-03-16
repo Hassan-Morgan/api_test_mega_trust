@@ -37,7 +37,6 @@ dependencies:
   flutter_bloc: ^8.0.1
   bloc: ^8.0.3
   dio: ^4.0.4
-  logger: ^1.1.0
   retrofit: ^3.0.1+1
   injectable: ^1.5.3
   get_it: ^7.2.0

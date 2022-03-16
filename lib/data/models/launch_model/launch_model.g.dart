@@ -18,7 +18,9 @@ LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => LaunchModel(
           : LaunchSiteModel.fromJson(
               json['launch_site'] as Map<String, dynamic>),
       launch_success: json['launch_success'] as bool?,
-    );
+    )..links = json['links'] == null
+        ? null
+        : LinksModel.fromJson(json['links'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$LaunchModelToJson(LaunchModel instance) =>
     <String, dynamic>{
@@ -28,4 +30,5 @@ Map<String, dynamic> _$LaunchModelToJson(LaunchModel instance) =>
       'launch_success': instance.launch_success,
       'rocket': instance.rocket,
       'launch_site': instance.launch_site,
+      'links': instance.links,
     };

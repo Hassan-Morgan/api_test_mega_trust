@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:mega_trust_api_task/data/models/linkes_model/links_model.dart';
 import 'package:mega_trust_api_task/data/models/rocket_model/rocket_model.dart';
 
 import '../launch_site_model/launch_site_model.dart';
@@ -13,6 +14,7 @@ class LaunchModel  {
   bool? launch_success;
   RocketModel? rocket;
   LaunchSiteModel? launch_site;
+  LinksModel? links;
 
   LaunchModel(
       {this.mission_name,

@@ -10,7 +10,6 @@ part 'retrofit.g.dart';
 abstract class SpaceXApi {
   factory SpaceXApi(Dio dio, {String baseUrl}) = _SpaceXApi;
 
-
   @GET(allLaunchesPath)
   Future<List<LaunchModel>> getTasks();
 }

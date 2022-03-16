@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mega_trust_api_task/logic/cubit/app_cubit/freezed_states/app_cubit_freezed_states.dart';
 import 'package:mega_trust_api_task/logic/reposatory/get_data_from_api.dart';
+
+import 'app_cubit_states_freezed/app_cubit_freezed_states.dart';
 
 class AppCubit extends Cubit<AppCubitStates> {
   AppCubit() : super(const AppCubitStates.initial());
